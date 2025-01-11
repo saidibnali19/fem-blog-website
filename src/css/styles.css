@@ -5,7 +5,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-weight: normal;
 }
 
 a {
@@ -29,6 +28,7 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    interpolate-size: allow-keywords;
 }
 
 /* A elements that don't have a class get default styles */
@@ -89,7 +89,8 @@ p {
 /* Custom properties */
 :root {
     --clr-primary: 36 100% 99%; /* white */
-    --clr-secondary: 233 8% 79%; /* light grey */
+    --clr-secondary: 236 13% 42%; /* grey */
+    --clr-secondary-inverted: 233 8% 79%; /* very light grey */
     --clr-accent: 5 85% 63%; /* red */
     --clr-light: 35 77% 62%; /* yellow  */
     --clr-dark: 240 100% 5%; /* very dark blue  */
@@ -138,16 +139,13 @@ p {
     --fs-300: var(--step--1);
     --fs-200: var(--step--2);
 
-    --ff-heading: "Space Mono", monospace;
-    --ff-body: "Roboto", sans-serif;
+    --ff-body: "Inter", sans-serif;
 
-    --fw-bold: bold;
-    --fw-normal: normal;
+    --fw-bolder: 800;
+    --fw-bold: 700;
+    --fw-normal: 400;
 
     --primary-header-min-height: 6rem;
-
-    --box-shadow: 0 0 5px hsl(0 0% 0% / .35);
-    --box-shadow-lifted: 0 0 64px -10px hsl(0 0% 0% / .35);
 }
 
 /* Typography */
@@ -157,6 +155,10 @@ p {
 
 .bg-light {
     background-color: hsl(var(--clr-light));
+}
+
+.bg-dark {
+    background-color: hsl(var(--clr-dark));
 }
 
 .bg-accent {
@@ -171,6 +173,10 @@ p {
     color: hsl(var(--clr-secondary));
 }
 
+.text-secondary-inverted {
+    color: hsl(var(--clr-secondary-inverted));
+}
+
 .text-accent {
     color: hsl(var(--clr-accent));
 }
@@ -179,7 +185,9 @@ p {
     color: hsl(var(--clr-light));
 }
 
-
+.text-dark {
+    color: hsl(var(--clr-dark));
+}
 
 .fs-900 {
     font-size: var(--fs-900);
@@ -214,17 +222,18 @@ p {
     font-size: var(--fs-300);
 }
 
-.ff-heading {
-    font-family: var(--ff-heading);
-}
-
 .ff-body {
     font-family: var(--ff-body);
+}
+
+.fw-bolder {
+    font-weight: var(--fw-bolder);
 }
 
 .fw-bold {
     font-weight: var(--fw-bold);
 }
+
 .fw-normal {
     font-weight: var(--fw-normal);
 }
@@ -293,6 +302,16 @@ p {
     display: grid;
     gap: var(--space-m);
 }
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 
 .change{
     transform: translateY(0)!important;

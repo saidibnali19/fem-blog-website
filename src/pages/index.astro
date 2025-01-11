@@ -1,7 +1,26 @@
 ---
+import PopularArticles from "../components/PopularArticles.astro";
 import FeaturedArticle from "../components/FeaturedArticle.astro";
+import NewArticles from "../components/NewArticles.astro";
 import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 ---
 <PrimaryLayout>
-	<FeaturedArticle />
+	<div class="wrapper grid">
+		<FeaturedArticle />
+		<NewArticles />
+	</div>
+	<PopularArticles />
 </PrimaryLayout>
+<style>
+	@media (width > 35em) {
+		div {
+			grid-template-columns: repeat(3, 1fr);/* so as to have a similar grid to the one of the section below this */
+		}
+	}
+
+	@media (width < 35em) {
+		div {
+			gap: var(--space-m) 0;/* To remove the unwanted column gap on mobile */
+		}
+	}
+</style>

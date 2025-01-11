@@ -24,16 +24,16 @@ import Icon from "../assets/images/logo.svg"
             <nav>
                 <ul
                     id="primary-navigation"
-                    class="header-menu | text-secondary flex"
+                    class="header-menu | flex"
                     data-header-menu
                     role="list"
                     data-visible="false"
                 >
-                    <li><a class="fw-bold" href="#about">Home</a></li>
-                    <li><a class="fw-bold" href="#projects">New</a></li>
-                    <li><a class="fw-bold" href="#contact">Popular</a></li>
-                    <li><a class="fw-bold" href="#contact">Trending</a></li>
-                    <li><a class="fw-bold" href="#contact">Categories</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Categories</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,14 +41,22 @@ import Icon from "../assets/images/logo.svg"
 </header>
 <style>
     /* Primary navigation */
+header{
+    margin-bottom: 5.5rem;
+}
+
+@media (width < 35em) {
+    header{
+        margin-bottom: 3.875rem;
+    }
+}
+
 .primary-header {
     inset: 0 0 auto 0;
-    padding-inline-start: 3.4375rem;
+    padding-inline: var(--space-m);
     width: 100%;
     position: fixed;
     z-index: 2;
-    box-shadow: 0 0px 64px -10px hsl(0 0% 0% / 0.35);
-    transition: .3s transform .3s ease;
 }
 
 .primary-header > div {
@@ -83,7 +91,7 @@ import Icon from "../assets/images/logo.svg"
 }
 
 .logo__image{
-    /* make it responsive using calc, if there it isn't */
+    width: clamp(2rem, 5vw + 1rem, 4.0625rem);
 }
 
 .header-menu a {
@@ -107,23 +115,6 @@ import Icon from "../assets/images/logo.svg"
 
 .header-menu a:is(:hover,:focus-within){
     color: hsl(var(--clr-accent));
-}
-
-@media (width > 35em) {
-    .header-menu a:where(:hover,:focus-within)::before{
-        transform: translateY(calc(var(--space-m) - 6px));
-        opacity: 1;
-    }
-}
-
-@media (width > 45em) {
-    .primary-header {
-        padding-inline: 0;
-    }
-
-    .logo {
-        flex-shrink: 0;
-    }
 }
 
 .header-menu-toggler {
@@ -167,7 +158,7 @@ import Icon from "../assets/images/logo.svg"
     }
 
     .header-menu a {
-        color: hsl(var(--clr-secondary));
+        color: hsl(var(--clr-dark));
         display: block;
         padding: 0;
     }
@@ -182,7 +173,7 @@ import Icon from "../assets/images/logo.svg"
     .hamburger::after {
         width: 2rem;
         height: 3px;
-        background-color: hsl(var(--clr-accent));
+        background-color: hsl(var(--clr-dark));
         transition: transform 350ms ease-in-out, opacity 200ms linear;
     }
 

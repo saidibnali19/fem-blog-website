@@ -11,10 +11,15 @@ import "../css/styles.css"
 		<meta name="generator" content={Astro.generator} />
 		<title>FEM Blog Website</title>
 	</head>
-	<body>
+	<body class="bg-primary text-secondary fs-400 ff-body fw-normal">
 		<Header />
-		<main>
+		<main class="flow">
 			<slot />
 		</main>
 	</body>
 </html>
+<style>
+	body {
+		padding-bottom: calc(var(--space-2xl-3xl) * 2);
+	}
+</style>

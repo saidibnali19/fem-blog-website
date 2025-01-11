@@ -1,0 +1,87 @@
+---
+import PopularImage1 from "../assets/images/image-retro-pcs.webp"
+import PopularImage2 from "../assets/images/image-top-laptops.webp"
+import PopularImage3 from "../assets/images/image-gaming-growth.webp"
+---
+<article class="popular-articles | wrapper">
+    <h4 class="visually-hidden">Popular Article</h4>
+    <ul class="grid" role="list">
+        <li>
+            <article class="grid">
+                <img src={PopularImage1.src} alt="">
+                <div class="flow">
+                    <a href="#">
+                        <h5 class="text-dark fs-400">Reviving Retro PCs
+                        </h5>
+                    </a>
+                    <p>What happens when old PCs are given modern upgrades?
+                    </p>
+                </div>
+            </article>
+        </li>
+        <li>
+            <article class="grid">
+                <img src={PopularImage2.src} alt="">
+                <div class="flow">
+                    <a href="#">
+                        <h5 class="text-dark fs-400">Top 10 Laptops of 2022
+                        </h5>
+                    </a>
+                    <p>Our best picks for various needs and budgets.
+                    </p>
+                </div>
+            </article>
+        </li>
+        <li>
+            <article class="grid">
+                <img src={PopularImage3.src} alt="">
+                <div class="flow">
+                    <a href="#">
+                        <h5 class="text-dark fs-400">The Growth of Gaming
+                        </h5>
+                    </a>
+                    <p>How the pandemic has sparked fresh opportunities.</p>
+                </div>
+            </article>
+        </li>
+    </ul>
+</article>
+<style>    
+    ul {
+        --flow-space: calc(var(--flow-space) / 2);
+        counter-reset: article-counter;
+    }
+    
+    @media (width > 35em) {
+        ul{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    li{
+        counter-increment: article-counter;
+    }
+
+    .popular-articles article {
+        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 5rem 1fr;
+    }
+    
+    .popular-articles article div::before {
+        content: counter(article-counter);
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    h5 {
+        margin-top: calc(var(--space-m) / 2);
+    }
+
+    h5:where(:hover, :focus-visible) {
+        color: hsl(var(--clr-accent));
+    }
+</style>

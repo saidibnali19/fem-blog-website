@@ -1,0 +1,55 @@
+---
+
+---
+<article class="new-articles | bg-dark text-secondary-inverted flow">
+    <h3 class="text-light fs-500" ari-label="New Artcles">New</h3>
+    <ul class="flow" role="list">
+        <li>
+            <article class="flow">
+                <a href="#">
+                    <h4 class="text-primary fs-400">Hydrogen VS Electric Cars</h4>
+                </a>
+                <p>Will hydrogen-fueled cars ever catch up to EVs?
+                </p>
+            </article>
+        </li>
+        <li>
+            <article class="flow">
+                <a href="#">
+                    <h4 class="text-primary fs-400">The Downsides of AI Artistry
+                </a>
+                </h4>
+                <p>    What are the possible adverse effects of on-demand AI image generation?
+                </p>
+            </article>
+        </li>
+        <li>
+            <article class="flow">
+                <a href="#">
+                    <h4 class="text-primary fs-400">    Is VC Funding Drying Up?
+                </a>
+                </h4>
+                <p>    Private funding by VC firms is down 50% YOY. We take a look at what that means.
+                </p>
+            </article>
+        </li>
+    </ul>  
+</article>
+<style>
+    .new-articles {
+        padding: var(--space-m);
+    }  
+    
+    .new-articles article {
+        --flow-space: calc(var(--space-m) / 2)
+    }
+
+    .new-articles li:not(:last-child) {
+        padding-bottom: var(--space-m);
+        border-bottom: 1px solid hsl(var(--clr-secondary) / .25);
+    }
+
+    h4:where(:hover, :focus-visible) {
+        color: hsl(var(--clr-light));
+    }
+</style>
