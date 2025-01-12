@@ -262,22 +262,6 @@ p {
     transform: translateY(-.1em);
 }
 
-.section-title{
-    position: relative;
-    padding-bottom: var(--space-m);
-}
-
-.section-title::before{
-    content: "";
-    position: absolute;
-    width: 2.5rem;
-    height: 5px;
-    background-color: hsl(var(--clr-accent));
-    border-radius: 100vmax;
-    inset: auto auto 0 auto;
-    margin-left: calc(var(--space-m) * 2);
-}
-
 /* Layout */
 .d-block {
     display: block;
@@ -312,16 +296,3 @@ p {
     white-space: nowrap;
     width: 1px;
   }
-
-.change{
-    transform: translateY(0)!important;
-}
-
-.change-about{
-    outline: 3px solid lime!important;
-}
-
-.change-about::after{
-    content: "";
-
-}
