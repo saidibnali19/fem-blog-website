@@ -48,7 +48,6 @@ import PopularImage3 from "../assets/images/image-gaming-growth.webp"
 </article>
 <style>    
     ul {
-        --flow-space: calc(var(--flow-space) / 2);
         counter-reset: article-counter;
     }
     
@@ -57,12 +56,12 @@ import PopularImage3 from "../assets/images/image-gaming-growth.webp"
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto auto 1fr;
         }
-
+        
         li {
             grid-template-rows: subgrid;
             grid-row: span 3;
         }
-
+        
         article:has(> img) {
             grid-template-rows: subgrid;
             grid-row: span 3;
@@ -87,7 +86,7 @@ import PopularImage3 from "../assets/images/image-gaming-growth.webp"
     }
     
     .popular-articles article div::before {
-        content: counter(article-counter);
+        content: counter(article-counter, decimal-leading-zero);
     }
     
     img{
